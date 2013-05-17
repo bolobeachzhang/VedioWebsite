@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Vediowebsite by bolobeachzhang</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/bolobeachzhang/VedioWebsite">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Vediowebsite</h1>
+            <h2>类似于土豆网一样，可以自己上传视频或者图片，也可以自动的去 互联网上抓取视频和图片进行播放</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/bolobeachzhang/VedioWebsite/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/bolobeachzhang/VedioWebsite/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>VedioWebsite</h1>
+
+<p>VedioWebsite是南昌大学的视频和图片网站，可以从本地上传图片或者视频(10G),也可以随时从互联网进行抓取视频或者图片，进行一个实时的更新。<br></p>
+
+<p>关于本项目所采用的技术</p>
+
+<hr><ol>
+<li>MVC:传统的MVC模式来进行开发（struts+hibernate+spring）<br>
+</li>
+<li>Database:sqlserver 2008 <br>
+</li>
+<li>IDE :eclipse <br>
+</li>
+<li>test:junit(4.0) <br>
+</li>
+<li>采用google reach api</li>
+<li>采用httpclient技术抓取</li>
+</ol><p>目录结构</p>
+
+<hr><pre><code>com.videoManagement.action -- 表示属于action层用来作为控制器
+com.videoManagement.basicDao --表示基本的数据操作dao层和实现类层，其他dao层或者dao层的实现层继承它即可完成，从而达到高度的封装。
+com.videoManagement.bean -- javabean层，就是一个javaBean，主要功能是用来存储数据
+com.videoManagement.serviceDao -- service接口层,用来声明service层的方法主体
+com.videoManagement.serviceImp -- service实现类层，用来实现service里面主体的方法
+com.videoManagement.util -- util层，是常用的一些工具类，比如说加密，以及验证码and more 
+com.videoManagement.videoHtml --是用来抓取网站html页面资料
+com.videoManagement.getYouku --抓取优酷或者土豆视频
+com.videoManagemen.picture -- 抓取图片
+com.videoManagement.longThread --使用线程进行定时的抓取
+下面就是一些基本的配置，源码里面有详细的介绍，在这里我就不啰嗦了。
+</code></pre>
+
+<h3>链接</h3>
+
+<p>1.<a href="http://www.google.com">点击这里你可以链接到www.google.com</a><br>
+2.<a href="http://bolobeach.blogspot.com/">点击这里你可以链接到我的博客</a><br>
+3.<a href="http://bolobeachzhang.github.io/studioWebsite/">点击这里下载源码(liunx,windows)</a><br>
+4.如果有宝贵的意见请给我发邮件(<a href="mailto:bolobeach@gmail.com">bolobeach@gmail.com</a>)<br></p>
+
+<h3>主界面展示</h3>
+
+<p><img src="https://raw.github.com/bolobeachzhang/VedioWebsite/master/images/main.jpg" alt="github" title="主界面"></p>
+
+<h3>视频界面展示</h3>
+
+<p><img src="https://raw.github.com/bolobeachzhang/VedioWebsite/master/images/vedion.jpg" alt="github" title="视频界面"></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/bolobeachzhang">bolobeachzhang</a> can be found on <a href="https://github.com/bolobeachzhang/VedioWebsite">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
