@@ -1,0 +1,94 @@
+    .div{
+            width: 689px;
+            height:auto;
+            margin:auto;
+            border: 1px solid  #f3f3f3;
+        }
+        .div1{
+            width:689px ;
+            height: 138px;
+              margin-top: 11px;
+            border-left: 1px solid  #c4c4c4;
+            border-right: 1px solid  #c4c4c4;
+            border-bottom: 1px solid  #c4c4c4;
+        }
+        .div1_1{
+            width: 106px;
+            height: 138px;
+            float: left;
+            background-color: #ededed;
+            border: 1px solid #c4c4c4;
+        }
+        .div1_1_1{
+            margin-top: 3px;
+            width: 98px;
+            height: 98px;
+            margin-left: 3px;
+            border: 1px solid  #c4c4c4;
+        }
+        /* 张兵加 */
+        .liuContent{
+        	width: 98px;
+        	height: 98px;
+        	overflow: hidden;
+        }
+        .label{
+            width: 90%;
+            color: #000000;
+            text-align: center;
+            background-color:#ededed ;
+            margin-top: 10px;
+        }
+        .lable{
+            width: 40px;
+            height: 30px;
+            float: right;
+            margin-top: 3px;
+        }
+        .div1_2{
+            width: 580px;
+            height: 138px;
+            float: right;
+            background-color: #ffffff;
+            border-bottom: 1px solid #c4c4c4;
+            border-top: 1px solid #c4c4c4;
+        }
+        .div1_2_1{
+            width: 578px;
+            height: 95px;
+        }
+        .div1_2_2{
+            width: 100%;
+            height: 40px;
+            border-right: 1px solid  #c4c4c4;
+            border-top: 1px solid  #c4c4c4;
+
+        }
+        input[type="text"]{
+            width: 420px;
+            height: 20px;
+            margin-top: 5px;
+            border-radius: 0px;
+        }
+        button{
+            width:76px ;
+            height: 30px;
+            float: right;
+            margin-right: 4px;
+            margin-top: 5px;
+        }
+        span{
+            margin-left: 6px;
+        }
+        .div_text{
+            width: 87%;
+            height: 90%;
+            margin-left: 14px;
+            margin-top: 5px;
+             background-color: #aabbcc;
+            float: left;
+        }
+        a{
+            color: #000000;
+        }
+    </style>

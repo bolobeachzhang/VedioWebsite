@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd 
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-2.5.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd" 
+	default-autowire="byName" default-lazy-init="true">
+	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.videoManagement" />
+	 	<!-- 在下面声明一个事务 -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<!-- 标准配置 -->
+				<value>classpath:resources/hibernate/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 数据源配置,使用应用内的DBCP数据库连接池 别使用c3p0 太不好了。。。-->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<!-- Connection Info -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 连接的基本信息 -->
+		<property name="initialSize" value="${initialSize}" />
+		<property name="maxActive" value="${maxActive}" />
+		<property name="maxIdle" value="${maxIdle}" />
+		<!-- 在这里是配置并发性 -->
+		<property name="maxWait" value="${maxWait}" />
+		<property name="defaultAutoCommit" value="${defaultAutoCommit}" />
+	</bean>
+
+	<!-- Hibernate配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl_auto}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.cache.provider_class">${hibernate.cache.provider_class}</prop>
+				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop>	
+				<prop key="hibernate.cache.use_second_level_cache">${hibernate.cache.use_second_level_cache}</prop>
+			</props>
+		</property>
+		<!-- 在这里配置hibernate -->
+		<property name="mappingResources">
+		    <list>
+		        <!-- 这里是配置hibernate.hbm.xml文件里面的信息 -->
+		    <value>com/videoManagement/bean/Users.hbm.xml</value>  
+		   	<value>com/videoManagement/bean/Comment.hbm.xml</value> 
+		   	<value>com/videoManagement/bean/Resources.hbm.xml</value> 
+		   	<value>com/videoManagement/bean/Sort.hbm.xml</value> 
+		   	<value>com/videoManagement/bean/SubmitMessage.hbm.xml</value> 
+		   	<value>com/videoManagement/bean/Vote.hbm.xml</value> 
+		     </list>
+     	</property>
+	</bean>
+	
+	<!-- 配置service -->
+	<import resource="application_service.xml"/> 
+	<import resource="application_action.xml"/> 
+</beans>

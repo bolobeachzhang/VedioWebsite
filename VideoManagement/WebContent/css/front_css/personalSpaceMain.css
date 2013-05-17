@@ -1,0 +1,154 @@
+body{padding: 0px;margin: 0px;}
+.content {
+		width: 100%;
+		margin: auto;
+		height: 700px;
+}
+
+.header {
+		position: fixed;
+		background-image: url("../../images/front_img/personalSpace/personalSpace_TitleBg.png");
+		height: 30px;
+		width: 100%;
+		background-repeat: repeat-x;
+		top: 0px;
+		z-index: 5;
+}
+.headcon{
+	width: 900px;
+	margin: 0 auto;
+}
+.sec1 {
+		float: left;
+}
+
+.sec2 {
+		margin-top: 5px;
+		width: 190px;
+		margin-left: 135px;
+		font-size: 15px;
+		color: #ffffff;
+		float: left;
+		font-family: "微软雅黑";
+}
+.searchF{
+	float: right;
+	background-color: white;
+	width: 260px;
+	height: 23px;
+	margin-top: 3px;
+	border: 1px solid #a3a3a3;
+	border-radius:3px;
+	
+}
+.searchInput{
+width: 229px;height: 23px;;
+border-right: none;
+}
+.headcon a {
+		font-size: 15px;
+		color: #ffffff;
+		text-decoration: none;
+		font-family: "微软雅黑";
+}
+
+.buttt {
+		height: 23px;
+		width: 23px;
+		border: none;
+		margin: 0px;
+		padding: 0px;
+}
+
+/*内容框架及其内容*/
+.contentFream{
+	width: 900px;
+	height: 1000px;;
+	margin: 0 auto;
+	margin-top: 35px;
+}
+
+.contLeftF {
+		width: 245px;
+		height: auto;
+		border: 1px solid #a3a3a3;
+		border-radius: 5px; 
+		float: left;
+		background-color: #383838;
+}
+
+.contRight {
+		width: 635px;
+		height: auto;
+		float: right;
+		margin: 0px;
+}
+
+.cont1_1 {
+		height: auto;
+		width: 225px;
+		text-align: center;
+		padding: 10px;
+}
+.cont1_1 img{
+	width: 225px;
+	border-radius:3px; 
+}
+.cont1_2{
+	width: 100%;
+	height: 35px;
+	font-size: 16px;
+	color: #F0A605;
+	text-align: center;
+}
+/*菜单*/
+.menuFream{
+	width: 100%;
+	font-size: 14px;
+}
+.menuFream a{
+	color: white;
+	text-decoration: none;
+}
+.menuFream ul, li {
+	/*清除ul和li上默认的小圆点*/
+	list-style: none;
+}
+.menuFream ul {
+	/*清除子菜单的缩进值*/
+	padding: 0;
+	margin: 0;
+}
+.menuFream .main{
+	width: 100%;
+}
+.mainOp{background-color: #FFB100;}
+.menuFream li {
+	background-color: #383838;
+}
+.menuFream a {
+	/*取消所有的下划线*/
+	text-decoration: none;
+	padding-left: 20px;
+	display: block;
+	display: inline-block;
+	width: 225px;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #525252;
+}
+.menuFream .main a{
+	color: white;
+	background-repeat: no-repeat;
+	background-position: 3px center;
+}
+.menuFream .main li a{
+	color: white;
+	background-image: none;
+	width: 75%;
+	margin-left: 20px;
+}
+.menuFream .main ul{
+	display: none;
+}
+

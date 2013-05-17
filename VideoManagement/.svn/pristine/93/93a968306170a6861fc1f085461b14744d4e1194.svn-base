@@ -1,0 +1,130 @@
+package com.videoManagement.action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ExceptionMapping;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import org.aspectj.weaver.patterns.ThisOrTargetAnnotationPointcut;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.videoManagement.bean.Comment;
+import com.videoManagement.bean.Images;
+import com.videoManagement.bean.Sort;
+import com.videoManagement.serviceDao.ReceptionImageNewsServiceDao;
+import com.videoManagement.util.ActionUtil;
+
+/**
+ * @ClassName:ReceptionImageNewsAction
+ * @Description: TODO(所有前台显示image页面的详细信息跳转页面)
+ * @author 张兵 【390125214@qq.com】
+ * @date 2013-4-1 下午7:54:14
+ * @version V1.0
+ * @Copyright: Copyright (c) 2013
+ * @Company: 成都大学信息科学与技术学院重点工作室
+ */
+@Controller
+@Results({
+		@Result(name = "image_seeEveryone", location = "/jsp/front_JSP/picture_jsp/image_seeEveryone.jsp"),
+		@Result(name = "error", location = "/WEB-INF/error.jsp") })
+@ExceptionMapping(exception = "java.lange.RuntimeException", result = "/WEB-INF/error.jsp")
+public class ReceptionImageNewsAction extends ActionUtil {
+	public int getPageCount() {
+		return pageCount;
+	}
+
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	public int getPageNow() {
+		return pageNow;
+	}
+
+	public void setPageNow(int pageNow) {
+		this.pageNow = pageNow;
+	}
+
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	private HttpServletRequest request;
+	@Autowired
+	private ReceptionImageNewsServiceDao receptionImageNewsServiceDao;
+	private String imageId;
+	private int offset;
+	private int pageSize = 10;
+	private int pageCount;    //评论页面总页数
+	private  int pageNow = 1;
+	public String getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+	}
+
+	@Action(value = "recpetionImageNews")
+	public String recpetionImageNews() throws IOException {
+		
+		String sortsHql = "from Sort where sortType=?";
+		// 处理所有的image类型
+		List<Sort> sorts = receptionImageNewsServiceDao.query(sortsHql, 0);
+		
+		Images images = null;
+		request = this.getRequest();
+		if (imageId == null || imageId.equals("")) {
+
+		} else {
+			// 通过imageId
+			images = (Images) receptionImageNewsServiceDao.findById(
+					Images.class, Integer.valueOf(imageId));
+			Date date = images.getCaptureTime();
+			// 同时得到userid
+		}		
+		// 下方为该资源的评论信息 添加人（代兵）
+		PrintWriter pw = this.getResponse().getWriter();
+		List<Comment> comments = receptionImageNewsServiceDao.findByPage1(
+				"from Comment c where c.resources.id=?", offset, pageSize,
+				Integer.parseInt(imageId));
+		//获得评论总条数
+		Object[] objects={Integer.parseInt(imageId)};
+		System.out.println("图片的id"+imageId);
+		int  totalNum = receptionImageNewsServiceDao.affectNumber("from Comment c where c.resources.id=?", objects);
+		System.out.println("总条数：："+totalNum);
+		//得到评论的总页数
+		if (totalNum % pageSize == 0) {
+			pageCount = (totalNum / pageSize);
+		} else {
+			pageCount = (totalNum / pageSize) + 1;
+		}
+		//System.out.println("总共有多少页::"+pageCount);
+		request.setAttribute("offset", offset);
+		request.setAttribute("pageCount", pageCount);
+		request.setAttribute("pageNow", pageNow);
+		request.setAttribute("comments", comments);
+		request.setAttribute("images", images);
+		request.setAttribute("sorts", sorts);
+		return "image_seeEveryone";
+	}
+}

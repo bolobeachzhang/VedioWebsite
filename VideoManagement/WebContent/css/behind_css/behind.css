@@ -1,0 +1,96 @@
+/*head样式  */
+#head
+{	color:red;
+	background-color: black;
+	background-image:url("../../images/head_bg.png");
+	background-repeat:repeat-x;
+	height: 65px;
+	width: 100%;	
+}
+#top_title{
+	width: 966px;
+	margin:0 auto;
+	height: 65px;
+}
+
+.title_left{
+	display: block;
+	float: left;
+	color: #ff9600;
+	font-size: 26px;
+	font-family: "微软雅黑";
+	margin-top: 18px;
+}
+.title_right{
+	display: inline-block;
+	float: right;
+	margin-top: 10px;
+	color: #ff9600;
+	font-family: "微软雅黑";
+}
+/*head部分样式结束*/
+
+/*以下为content---part-right内容样式**/
+#content{
+	margin: 0 auto;
+	width: 980px;
+	min-height: 1000px;
+	margin-top: 25px;
+}
+#content .part-right{
+	width:750px;
+	min-height: 700px;	
+	background-color: black;
+}
+.ifreamClass{
+	width: 750px;
+	min-height: 1150px;
+	
+}
+.Btn:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: #e2e2e2;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -ms-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+
+.Btn {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 10px 4px;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 18px;
+  vertical-align: middle;
+ /*  background-color: #f5f5f5; 注释样式为菜单栏的按钮样式，兼容各大浏览器。
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x; */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+/*   border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); */
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  border-bottom: 1px solid #c0c0c0;
+  /* border-bottom-color: #b3b3b3; */
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  /* -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); */
+  cursor: pointer;
+  *margin-left: .3em;
+  background-color: #fff;
+}

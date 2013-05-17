@@ -1,0 +1,361 @@
+@CHARSET "UTF-8";
+* {margin:0; padding:0;}
+img {border:0;}
+html {
+	height: auto;
+	width: 100%;
+	overflow: scroll;
+}
+body {
+	margin: 0 auto;
+	padding: 0;
+	height: auto;
+	width: 100%;
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+.fream {
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		float: left;
+}
+
+#img {
+		width: 231px;
+		margin: 0 auto;
+		position: fixed;
+		z-index: 201;
+}
+/*头部*/
+#head{
+		height: 96px;
+		width: 100%;
+		float: left;
+		background-image:url("../../images/front_img/video_headBg1.png");
+		background-repeat: repeat;
+}
+#head .logo{
+		width: 107px;
+		height: 59px;
+		margin-top: 21px;
+		float: left;
+		z-index: 200; 
+		margin-left: 8%;
+}
+#head .headRight{
+	width: 350px;
+	margin-right: 6%;
+	float:right;
+	margin-top: 16px;
+}
+#head .headRight span{
+		color:white;
+	float: right;
+}
+#head .headRight span a{
+	text-decoration: none;
+	color:white;
+}
+#head .headRight span a:HOVER{
+	text-decoration: underline;
+}
+/*导航部分*/
+#nav{height: 31px;width:100%;background-image: url("../../images/front_img/video_navBg.png");
+    background-repeat: repeat; 
+    z-index: 200; 
+    float: left;
+}
+#nav .allNav{
+		width: 244px;
+		height: 31px;
+		font-size: 18px;
+		background-color: #12896E;
+		float: left;
+		margin-left: 6%;
+		background-image:url("../../images/front_img/video_classifyBg.png");
+		color: #fff;
+		cursor: pointer;
+}
+.allNav span{
+		margin-left:14px;
+		margin-top: 4px;
+		float: left;
+		
+}
+#nav .search{
+		height: 23px;
+		width:292px;
+		float: right;
+		margin-top: 4px;
+		margin-right: 6%;
+		background-image: url("../../images/front_img/video_search.png");
+}
+#nav .searchButt{
+		float: right;
+		width: 51px;
+		height:23px;
+		border:none;
+		background-attachment: fixed;
+}
+#nav .searchButt:HOVER{
+		color:#000;
+		background-color: #D1D1D1;
+		
+}
+ /*浮动菜单样式*/
+#navSpanList{
+    width: 244px;
+    height: auto;
+    height: auto;
+    font-size: 18px;
+    background-color: #019C7A;
+    float: left;
+    margin-left: 6%;
+    color: #ffffff;
+    z-index: 202;
+}
+#navSpanList ul,#navSpanList li{
+    padding: 0px;
+   list-style: none;
+    float: left;
+    margin: 0px;
+}
+#navSpanList li{
+    width: 110px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+#navSpanList li:hover{
+    background-color: #12876D;
+}
+.navSpanListClickOp{
+    background-color: #12876D;
+}
+#navSpanList a{
+    color: #ffffff;
+    text-decoration: none;
+}
+/*播放的位置与内容的标题*/
+.palyTitleF{
+width:100%;padding-top:30px;height: 25px;float: left;
+}
+.palyTitle{margin-left: 25%;font-size: 18px;font: "宋体";}
+/*播放区域样式  */
+
+.playFream {background: -webkit-gradient(linear,0% 0%, 0% 100%,from(#000000), to(#484848));width:100%;height:530px; margin:0 auto;float: left;}
+#palyBox {margin-left:25%;width:930px; height:530px; overflow:hidden; position:relative;}
+.playWindow{float: left;width: 660px;height: 530px;}
+/*播放右边的导航显示s*/
+.playRightNav{
+		width: 246px;
+		height: 463px;
+		margin-top: 28px;
+		float: right;
+		background-image: url("../../images/front_img/video_playPagePlayRightNavBg.png");
+}
+.playRightNavUpTitle{
+		text-align: center;
+		font-size: 14px;
+		color: white;
+		width: 246px;
+		height: 25px;
+		float: left;
+		padding-top: 5px;
+		padding-bottom: 5px;
+}
+.playRightNavListF{
+		float:left;
+	width: 246px;
+	height: 420px;
+	overflow: hidden;	
+}
+.playRightNavListEveryF{
+	width: 229px;
+	height: 91px;
+	float: left;
+	margin-left: 4px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+/*鼠标点击，和hover时每个列表后背景变化*/
+.playRightNavListEveryFOption{
+	background-image: url("../../images/front_img/video_playPagePlayRightNavPressDownBg.png");
+}
+.navHoverOp{
+	background-color: #6C6C6C;
+}
+.playRightNavListEveryImg{
+	width: 90px;
+	height: 70px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	margin-left: 13px;
+}
+.playRightNavListEveryImg img{
+	width: 90px;
+	height: 70px;
+}
+.playRightNavListEveryRF{
+	width: 110px;
+	height: 70px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: right;
+	margin-right: 7px;
+	font-size: 12px;
+	color: white;
+}
+.playRightNavListEveryRT{
+	width: 110px;
+	height: 55px;
+	overflow: hidden;
+	text-align: left;
+}
+.playRightNavListEveryRT a{
+	color: white;
+	text-decoration: none;
+}
+.playRightNavListEveryRT a:HOVER{
+	text-decoration: underline;
+}
+/* 所有的评论内容allContentFream*/
+#allContentFream{
+		float: left;
+		width: 660px;
+		min-height: 900px;
+		margin-left: 25%;
+		margin-top: 2px;
+}
+/*顶，评论点击*/
+.moviePoint{
+	width: 658px;
+	height: 53px;
+	float: left;
+	margin-bottom: 20px;
+	border: 1px solid #a3a3a3;
+}
+/**/
+.discusFream{
+	width: 660px;
+	height: auto;
+	float: left;
+	background-image: url("../../images/front_img/video_discusFreamTopBg.png");
+	background-repeat: repeat-x;
+	font-size: 12px;
+	color: black;
+	font: "宋体";
+	border-left: 1px solid #a3a3a3;
+	border-right: 1px solid #a3a3a3;
+	border-bottom: 1px solid #a3a3a3;
+	border-radius: 6px; 
+	padding-bottom: 15px;
+	background-color: white;
+}
+.discusInput{
+	width: 617px;
+	height: 150px;
+	float: left;
+	margin-top: 19px;
+	margin-left: 21px;
+}
+.discusInputImgF{
+	width: 60px;
+	height: 120px;
+	float: left;
+}
+.discusInputImgF img{
+		width: 60px;
+	height: 60px;
+	float: left;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.5); 
+}
+.discusInputName{
+	width: 60px;
+	float: left;
+	height: 50px;
+	margin-top: 10px;
+}
+.discusInputText{
+	width: 537px;
+	height: 150px;
+	float: right;
+	text-align: center;
+}
+#discusInputTextOut{
+	width: 537px;
+	height: 110px; 
+	float: left;
+	border: 1px solid #a3a3a3;
+	border-radius:5px;
+	
+	}
+.discusInputText textarea {
+	width: 537px;
+	height: 110px; 
+	float: left;
+	border-color:#a3a3a3;
+	border-radius:5px;
+	text-align: justify;
+	text-indent: 24px;
+}
+.discusInputBottom{
+	width: 537px;
+	height: 30px;
+	float: right;
+	margin-top: 15px;
+	
+}
+.discusInputBottom span{
+	float: left;
+	color: #a3a3a3;
+}
+.discusInputBottom img{
+	float: right;
+	margin-right: 16px;
+	cursor: pointer;
+}
+/*评论列表开始*/
+.discusListFream{
+	width: 617px;
+	height: auto;
+	float: left;
+	margin-left:21px;
+	border: 1px solid #a3a3a3; 
+	margin-top: 15px;
+	padding-bottom: 12px;
+}
+.discusListEveryF{
+	width: 590px;
+	min-height: 105px;
+	float: left;
+	margin-left: 11px;
+	margin-top: 12px;
+	border-bottom: 1px solid #a3a3a3;
+}
+.discusListEveryImgF{
+	width: 60px;
+	height: 120px;
+	float: left;
+}
+.discusListEveryImgF img{
+		width: 60px;
+	height: 60px;
+	float: left;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.5); 
+}
+.discusListEveryName{
+	width: 60px;
+	float: left;
+	height: 30px;
+	margin-top: 10px;
+}
+.discusListEvContent{
+	width: 510px;
+	margin-top: 12px;
+	float: right;
+	min-height: 60px;
+}

@@ -1,0 +1,51 @@
+这个文件是说明webContent下的jsp文件模块说明，以方便寻找起来方便。前后台用 “*” 分割，小模块用 “=”分割，再次用“-”分割
+
+********************前台页面说明***********************
+
+	===========视频部分===============
+	jsp/front_JSP/video_jsp/video_index.jsp是视频的首页
+	对应的js在js/front_js/中，文件名是以video_开头的
+	
+	-----模块1-------
+		这是美女部分
+	-----模块2-------
+	
+	
+	
+	===========图片部分===============
+	jsp/front_JSP/picture_jsp/pic_index.jsp是图片的首页
+	对应的js在js/front_js/中，文件名是以image_开头的
+
+********************后台页面说明***********************
+
+	===========视频部分===============
+	
+	===========图片部分===============
+	=================================
+	================================
+	1、straty_manager(搜索策略管理部分)
+		---searchManagement.jsp(搜索策略管理子页面)
+	
+	
+	2、resource_manger(资源管理部分)
+		---existResource(已存在资源管理)
+			---comment.jsp(评论管理子界面)
+			---uploadImages.jsp(已上传图片资源子界面)
+			---uploadVedio.jsp(已上传视频资源子界面)
+		
+		---newResource(最新资源管理)
+			---images.jsp(未审核图片资源子界面)
+			---vedio.jsp(未审核视频资源子界面)
+		
+		---oldResource(失效资源管理)
+			---oldRes.jsp(失效资源子页面子界面)
+		
+		---uploadResource(上传资源管理)
+			---AdminUploadResource.jsp(管理员上传资源管理子页面)
+			---UserUploadResource.jsp(用户上传资源管理子页面)
+		
+		---sortManger(分类管理部分：缩略图点击进去后的标签分类，添加属性，备注等操作要用到的子页面都在这个目录下)
+			---imgSortManagement.jsp(图片分类管理子页面)
+		
+		3、liuyan_manager(留言管理部分)
+		---liuyanManagment.jsp(留言管理子界面)

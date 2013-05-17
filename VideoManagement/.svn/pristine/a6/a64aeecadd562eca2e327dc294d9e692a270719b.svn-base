@@ -1,0 +1,52 @@
+#这个是日志文件
+#配置日志的根 语法：#log4j.rootLogger = [ level ] , appenderName, appenderName, …
+#下面表示所有的日志都要被记录下来（DEBUG日志则不会被记录下来）
+#DB表示要添加到数据库
+log4j.rootLogger=ERROR,A1,R
+#ConsoleAppender输出到控制层
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+#下面对A1使用输出布局其中log4j有提供了4种布局方式
+#org.apache.log4j.HTMLLayout(以html表格形式)
+#org.apache.log4j.PatternLayout(可以灵活的指定布局模块)
+#org.apache.log4j.SimpleLayout(包含日志的信息级别和信息字符串)
+#org.apache.log4j.TTCCLayout(包含日志产生的时间、线程、类别等信息)
+#一般的情况我们都选择可以灵活的指定布局模块
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+#灵活定义输出格式。具体查询log4j javadoc org.apache.log4j.PatternLayout#d 时间
+#输出的时间格式
+log4j.appender.A1.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss}[%c]-[%p]%m%n
+#R输出到文件 RollingFileAppender的扩展，可以提供一种日志的备份功能
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+#输出到文件中日志文件的名字
+log4j.appender.R.File=D://test.log
+#日志文件的大小
+log4j.appender.R.MaxFileSize=10240KB
+#保存一个备份文件
+log4j.appender.R.MaxBackupIndex=1
+#对R日志的输出格式
+log4j.appender.R.layout = org.apache.log4j.PatternLayout
+#输出时间格式
+log4j.appender.R.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss} %-5p [%c{1}] %m%n
+
+#下面将日志存储到数据库中
+#这个配置是选择使用JDBCAppender方法，将日志信息存储到数据库
+#log4j.appender.DB = org.apache.log4j.jdbc.JDBCAppender
+#下面配置log4j当有多少条日志的时候才插入数据库 设置为1条
+#￥log4j.appender.DB.BufferSize=1
+#配置数据库的Driver
+#log4j.appender.DB.driver=com.mysql.jdbc.Driver
+#配置数据库的url
+#log4j.appender.DB.URL=jdbc:mysql://180.84.33.77:3306/salayandperformance
+#这个配置数据库连接的URL，不用说也都知道。
+#log4j.appender.DB.user=root
+#log4j.appender.DB.password=XXX
+#log4j.appender.DB.Threshold=DEBUG
+#下面插入进数据库
+#log4j.appender.DB.sql=insert into reslog(class,method,createTime,logLevel,msg)values ('%C','%M', '%-d{yyyy-MM-dd HH:mm:ss}','%p','%m')
+#%C’是日志中的CLASS；‘%M’是打印日志是执行到类里的方法；‘%d’是打印的时间，它支持格式化；‘%P’是日志级别，包括INFO、DEBUG、ERROR等；‘%m’是MSG，日志内容。
+#log4j.appender.DB.layout=org.apache.log4j.PatternLayout
+#log4j.logger.org.hibernate=debug
+#log4j.logger.org.hibernate.type=debug
+#log4j.logger.java.sql.Connection=debug
+#log4j.logger.java.sql.Statement=debug
+#log4j.logger.java.sql.PreparedStatement=debug

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.videoManagement.bean.Users" table="users"
+		schema="dbo" catalog="videoManageMent">
+			<cache usage="nonstrict-read-write"/>
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="userName" type="java.lang.String">
+			<column name="userName" length="32" not-null="true" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="128" not-null="true" />
+		</property>
+		<property name="registTime">
+			<column name="registTime" length="23" />
+		</property>
+		<property name="passWord" type="java.lang.String">
+			<column name="passWord" length="200" not-null="true" />
+		</property>
+		<property name="userImageUrl" type="java.lang.String">
+			<column name="userImageUrl" length="1000" />
+		</property>
+		<property name="userType" type="java.lang.Integer">
+			<column name="userType" />
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="sex" />
+		</property>
+		<set name="resourceses" inverse="true">
+			<key>
+				<column name="uploadUserId" />
+			</key>
+			<one-to-many class="com.videoManagement.bean.Resources" />
+		</set>
+	</class>
+</hibernate-mapping>

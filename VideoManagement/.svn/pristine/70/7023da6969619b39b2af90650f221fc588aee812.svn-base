@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+  <package extends="struts-default" name="action">
+    	<action name="indexAction.action" class="com.videoManagement.action.IndexAction">
+    	  <result name="test">/WEB-INF/test.jsp</result>
+    	 </action>
+  </package> 
+</struts>

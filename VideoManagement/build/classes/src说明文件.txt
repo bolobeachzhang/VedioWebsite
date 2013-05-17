@@ -1,0 +1,60 @@
+这个文件是说明src下面的类所处理的业务逻辑到底是那部分，以方便以后寻找起来方便
+
+****************************action类**************************************
+com/videoManagement/action 目录下的文件说明
+
+1. loginAction 主要负责登录界面的方法 (张兵)
+2. SearchManAction 主要负责抓取土豆网的视频信息
+
+***************************Dao层******************************************
+
+com/videoManagement/basicDao （dao层。主要负责对数据操作这块）
+
+1. BasicDao 最基本的dao层。有很多对数据库进行操作的接口  (张兵)
+2. BasicServiceImp 最基本的dao层实现类，有很多对数据库进行操作的实现类(张兵)
+
+****************************javaBean层************************************
+
+com/videoManagement/bean (javaBean层，主要是hibernate的bean)(张居开)
+
+****************************service接口层**********************************
+
+com/videoManagement/serviceDao (dao 接口层)
+1. SearchManServiceDao 用来处理搜索土豆网的dao层
+****************************service实现类层*********************************
+
+com/videoManagement/serviceImp (service 实现类层)
+
+****************************测试类文件层*************************************
+
+com/videoManagement/test (测试类文件)
+
+
+****************************帮助类文件**************************************
+com/videoManagement/util(帮助类文件---张兵)
+1. ActionUtil (action的基础类，主要有保存session以及获取request，response对象和权限等级)(张兵)
+2. Constant (保存session，以及权限的final类) (张兵)
+3. DB (数据库连接部分信息，主要是采用jdbc等操作实现) (张兵)
+4. DBManager (数据库操作的基本信息，CRUD操作 ，采用jdbc实现) (张兵)
+5. MD5 (字段加密文件，采用32为MD5加密) (张兵)
+6. PictureDown (图片下载类 功能未实现) (张兵)
+7. stramTool (数据库流的读取类) (张兵)
+8. strutsPageBean (数据库分页类的javaBean) (张兵)
+9. UsersIp (用户的IP地址) (张兵)
+
+****************************resources.hibernate***************************
+
+resources.hibernate 用来配置hibernate一些基本的数据(张兵)
+
+*****************************resource.spring******************************
+resources.sping spring的配置文件 (张兵)
+
+
+******************************struts***************************************
+resources.struts和resources.StrutsXml struts的配置文件 (张兵)
+
+********************************log4j**************************************
+
+resources.log4j 是log4j 配置文件 (张兵)
+
+
