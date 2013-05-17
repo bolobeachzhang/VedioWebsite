@@ -29,7 +29,7 @@ VedioWebsite
 ### 链接
 1.[点击这里你可以链接到www.google.com](http://www.google.com)<br />
 2.[点击这里你可以链接到我的博客](http://bolobeach.blogspot.com/)<br />
-3.[点击这里下载源码(liunx,windows)](http://bolobeachzhang.github.io/studioWebsite/)<br/>
+3.[点击这里下载源码(liunx,windows)](http://bolobeachzhang.github.io/VedioWebsite)<br/>
 4.如果有宝贵的意见请给我发邮件(bolobeach@gmail.com)<br/>
 
 ###主界面展示
